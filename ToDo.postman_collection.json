@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "6357397e-f563-430f-bd37-b6f1345bef7e",
+		"name": "ToDo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "registerUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"minahil.imtiaz@tintash.com\",\n    \"password\": \"12345\",\n    \"name\": \"Minahil\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/user/register/"
+			},
+			"response": []
+		},
+		{
+			"name": "addTask",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFeHBpcmVzQXQiOjE2MjQ2MTgwNjYsIklzc3VlZEF0IjoxNjI0NTMxNjY2LCJ1c2VySUQiOjF9.sm8Rck_kCDKKya9U5YM4ax1p8fPPWMS68qDzt1HA3cc"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"My Second task\",\n    \"status\": \"Done\",\n    \"description\": \"Random description\",\n    \"dueDate\":\"2021-06-21T22:06:56+00:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/task/add/"
+			},
+			"response": []
+		},
+		{
+			"name": "getUserTasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFeHBpcmVzQXQiOjE2MjQ2MTgwNjYsIklzc3VlZEF0IjoxNjI0NTMxNjY2LCJ1c2VySUQiOjF9.sm8Rck_kCDKKya9U5YM4ax1p8fPPWMS68qDzt1HA3cc"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/task/get/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"task",
+						"get",
+						""
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteTask",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFeHBpcmVzQXQiOjE2MjQ2MTgwNjYsIklzc3VlZEF0IjoxNjI0NTMxNjY2LCJ1c2VySUQiOjF9.sm8Rck_kCDKKya9U5YM4ax1p8fPPWMS68qDzt1HA3cc"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/task/delete/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "updateTask",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFeHBpcmVzQXQiOjE2MjQ2MTgwNjYsIklzc3VlZEF0IjoxNjI0NTMxNjY2LCJ1c2VySUQiOjF9.sm8Rck_kCDKKya9U5YM4ax1p8fPPWMS68qDzt1HA3cc"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"MyTask\",\n    \"status\": \"Conflicted\",\n    \"description\": \"No description\",\n    \"dueDate\":\"2021-06-22T22:06:56+00:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/task/update/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "loginUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"minahil.imtiaz@tintash.com\",\n    \"password\": \"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/user/login/"
+			},
+			"response": []
+		},
+		{
+			"name": "assignTask",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFeHBpcmVzQXQiOjE2MjQ2MTMzNjgsIklzc3VlZEF0IjoxNjI0NTI2OTY4LCJ1c2VySUQiOjJ9.XmBGh4lnG-zZYyRrwqKVsyltRd9XDUsj1elaaZv-lpA"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"minaahilimtiaz98@gmail.com\",\n    \"task\": {\n        \"name\": \"My Seventhhh Task\",\n        \"status\": \"Pending\",\n        \"description\": \"Random description\",\n        \"dueDate\": \"2021-06-21T22:06:56+00:00\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/task/assign/"
+			},
+			"response": []
+		}
+	]
+}
